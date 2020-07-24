@@ -1,0 +1,270 @@
+ /* section 1 */
+ .section1{
+     position: fixed;
+     width: 100%;
+     z-index: 1;
+ }
+.iconpic{
+   height: 100px;
+   width: 100px;
+   border-radius: 100%;
+}
+.indsec1title{
+    font-size: 20px;
+    font-family : cursive;
+    padding-left: 35%;
+    margin-top: 0%;
+}
+.indsec1name{
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-left: 20%;
+    margin-bottom: 0%;
+}
+.div3{
+    padding: 50px;
+}
+@media (max-width : 390px){
+    .iconpic{
+        height: 55px;
+        width: 30px;
+        border-radius: 100%;
+     }
+     .indsec1title{
+         font-size: 13px;
+         font-family : cursive;
+         padding-left: 15%;
+     }
+     .indsec1name{
+         font-size: 18px;
+         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+         padding-left: 0%;
+         padding-top: 20px;
+     }
+     .div3{
+        padding: 47px;
+    }
+}
+/* section 1*/
+
+/* section 2 */
+.baba {
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+}
+.div1baba{
+    text-align: center;
+    background-color:black;
+}
+.div2baba
+{   margin: auto;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    padding-top: 25px;
+}
+.founder{
+    color: white;
+}
+.div2baba:hover{
+    background-color: gray;
+}
+    /* section 2 */
+
+    /* section 3 */
+.section3{
+    background-color: black;
+}
+
+.slidimg{
+    width: 80%;
+    height: 400px;
+    margin-left: 10%;
+}
+/* section3 */
+
+/* section 4 */
+.name{
+    background-color: black;
+    text-align: center;
+    padding: 0%;
+    color: white;
+}
+.pimg{
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    border-radius: 30%;
+}
+.ds3{
+    text-align: center;
+}
+#section4{
+background-color: black;
+}
+h5{
+    color:white;
+}
+
+ /* section 4 */
+ /* section 5 */
+ .section5
+ {
+     background-color: gray;
+     text-align: center;
+     padding: 3px;
+ }
+ .sl{
+     display: inline-block;
+     font-size: 70px;
+     padding: 20px;
+     margin-left: 50px;
+     margin-right: 50px;
+     color: black;
+ }
+.awesomicon3{
+     color:red;
+ }
+ .awesomicon1{
+     color: blue;
+ }
+ .awesomicon2{
+     color: purple;
+ }
+ .awesomicon4{
+     color: greenyellow;
+ }
+ .section5{
+     margin-top: 2px;
+ }
+ .addlast{
+     color: white;
+ }
+/* section 5 */
+/* about */
+.aboutsec2{
+    background-color: black;
+    padding: 4px;
+    margin-top: 2px;
+}
+.aboutsec3{
+    background-color: black;
+    padding: 4px;
+    
+}
+
+.aboubabaimg{
+    width: 150px;
+    height: 150px;
+    border-radius: 30%;
+}
+.abouthed{
+    color: white;
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.abouthed2{
+    color: white;
+    font-size: 35px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.aboutdiv2{
+    text-align: center;
+}
+.aboutp3{
+    font-size: 30px;
+    color: white;
+    font-style: italic;
+}
+.aboutitle2{
+    color: white;
+    font-size: 25px;
+    font-family :cursive;
+}
+/* .aboutmainsection::before{
+    background-image:url("background.jpg") ;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    z-index: 1;
+    opacity: 0.4;
+} */
+@media (max-width : 390px){
+    .abouthed{
+        color: white;
+        font-size: 30px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .aboutitle2{
+        color: white;
+        font-size: 15px;
+        font-family :cursive;
+       
+    }
+    .aboutp3{
+        font-size: 16px;
+        color: white;
+        font-style: italic;
+        padding: 10px;
+    }
+}
+/* about */
+/* contect page */
+.conimg{
+    
+    height: 600px;
+    width: 100%;
+}
+.con2sce{
+    background-color: black;
+
+}
+.concontact{
+    text-align: center;
+}
+.contactinfo{
+    color: white;
+    font-family: cursive;
+    padding: 5px;
+    font-size:30px;
+}
+.conh{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:50px;
+}
+.conh2{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:40px;
+}
+/* #new{
+    position: relative;
+    top: 57px;
+    margin-bottom: 57px;
+} */
+@media (max-width : 390px){
+
+    .conh{
+        color: white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size:30px;
+    }
+    .conh2{
+        color: white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size:20px;
+    }
+    .contactinfo{
+        color: white;
+        font-family: cursive;
+        padding: 2px;
+        font-size:20px;
+    }
+}
+/* contect */
+.devlopinfo{
+    background-color: gray;
+    color: white;
+}
