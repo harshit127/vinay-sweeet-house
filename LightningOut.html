@@ -14,37 +14,11 @@
         const SF_PASSWORD = "Metacube123PoTT6YXEolw8urlhl93yfItw"; // Append Security Token if needed
 
         // Function to authenticate with Salesforce and get an access token
-        // async function authenticateWithSalesforce() {
-        //  loadLightningComponent('00DdN00000XBuv7!AQEAQHqBfPknEVJmNiZij.nSNWqG37sehCnEfke9fEjA5lwYpBBW..RaQIUIEzxv171POAiJtq19rxuENiZgv4vJJes0XkFl');
-                
-        // }
         async function authenticateWithSalesforce() {
-            const tokenUrl = SF_LOGIN_URL+'/services/oauth2/token';
-            const params = new URLSearchParams();
-            params.append("grant_type", "password");
-            params.append("client_id", CLIENT_ID);
-            params.append("client_secret", CLIENT_SECRET);
-            params.append("username", SF_USERNAME);
-            params.append("password", SF_PASSWORD);
-
-            try {
-                const response = await fetch(tokenUrl, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: params,
-                });
-
-                const data = await response.json();
-                if (data.access_token) {
-                    console.log("Authentication successful!", data);
-                    loadLightningComponent(data.access_token);
-                } else {
-                    console.error("Error authenticating:", data);
-                }
-            } catch (error) {
-                console.error("Authentication failed:", error);
-            }
+         loadLightningComponent('00DdN00000XBuv7!AQEAQHqBfPknEVJmNiZij.nSNWqG37sehCnEfke9fEjA5lwYpBBW..RaQIUIEzxv171POAiJtq19rxuENiZgv4vJJes0XkFl');
+                
         }
+    
 
         // Function to load Lightning Out component
         function loadLightningComponent(oauthToken) {
