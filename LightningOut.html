@@ -45,7 +45,7 @@
         // Function to load Lightning Out component
         function loadLightningComponent(oauthToken) {
             const script = document.createElement("script");
-            script.src = ${SF_INSTANCE_URL}/lightning/lightning.out.js;
+            script.src = SF_INSTANCE_URL+'/lightning/lightning.out.js';
             script.onload = function () {
                 $Lightning.use("c:LightningOutDependencyApp",
                     function () {
