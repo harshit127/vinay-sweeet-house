@@ -189,7 +189,8 @@
   </section>
   <marquee class="devlopinfo" behavior="" direction=""><h4>DEVLOP BY ER.ASFA AND ER.HARSHIT  CONTACT-NO-- 8840850502,8318727464</h4></marquee> 
     <div id="lightningout"></div>
-  
+    <marquee>djdnddjdndn</marquee>
+    <div id="leaderboard"></div>
     
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -211,7 +212,18 @@
         },
         'https://metacube52.my.site.com' // Site endpoint
       );
-    </script>
 
+       var url = "https://metacube52.my.salesforce.com";
+       var token = "Bearer "+"00DdN00000XBuv7!AQEAQMs5smi2P0fyGBxqxbz4mcEqHd7NqDkesYwGPyyKSY_USws7kpRhdIIxGMJicTz983t6jwo09q1Am6Dhtd84oHRYTSuT";
+        console.log(token);
+       $Lightning.use("c:LightningOutDependencyApp", function() {
+           $Lightning.createComponent ("c:homepageheader", {},
+               "leaderboard", 
+                function ( cmp) {
+               // do some stuff
+              });
+       },url, token );  
+    </script>
+    
 </body>
 </html>
