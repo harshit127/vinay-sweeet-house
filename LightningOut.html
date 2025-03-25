@@ -15,7 +15,7 @@
 
         // Function to authenticate with Salesforce and get an access token
         async function authenticateWithSalesforce() {
-            const tokenUrl = ${SF_LOGIN_URL}/services/oauth2/token;
+            const tokenUrl = SF_LOGIN_URL+'/services/oauth2/token';
             const params = new URLSearchParams();
             params.append("grant_type", "password");
             params.append("client_id", CLIENT_ID);
