@@ -197,21 +197,21 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://metacube52.my.salesforce.com/lightning/lightning.out.js"></script>
     <script>
-      $Lightning.use(
-        'c:LightningOutDependencyApp', // name of the Lightning app
-        function () {
-          // Callback once framework and app loaded
-          $Lightning.createComponent(
-            'c:homepageheader', // top-level component of your app
-            {}, // attributes to set on the component when created
-            'lightningout', // the DOM location to insert the component
-            function (cmp) {
-              // callback when component is created and active on the page
-            }
-          );
-        },
-        'https://metacube52.my.site.com' // Site endpoint
-      );
+      // $Lightning.use(
+      //   'c:LightningOutDependencyApp', // name of the Lightning app
+      //   function () {
+      //     // Callback once framework and app loaded
+      //     $Lightning.createComponent(
+      //       'c:homepageheader', // top-level component of your app
+      //       {}, // attributes to set on the component when created
+      //       'lightningout', // the DOM location to insert the component
+      //       function (cmp) {
+      //         // callback when component is created and active on the page
+      //       }
+      //     );
+      //   },
+      //   'https://metacube52.my.site.com' // Site endpoint
+      // );
 
        var url = "https://metacube52.my.salesforce.com";
        var token = "Bearer "+ "00DdN00000XBuv7!AQEAQDXDpMmKuhk6CvUymdhfvwW4pOwHEvYCL2cRdvlcBsjX9VHmnLwG40ArNYFU27iWNpJBR_z1i5jida1G1COD67XlcIkp";
