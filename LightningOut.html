@@ -18,7 +18,7 @@
         //  loadLightningComponent('00DdN00000XBuv7!AQEAQCfVJLrggPBSMWFJCXdgTSgrNDU8dkVZBSNeCO9oKRDyScm1992qiAPXY7WJwi_nlzQZ3BtRgRMrQI45J.LnK4PfZxKE');
                 
         // }
-           async function authenticateWithSalesforce() {
+        function authenticateWithSalesforce() {
             const tokenUrl = SF_LOGIN_URL+"/services/oauth2/token";
                console.log(tokenUrl);
             const params = new URLSearchParams();
@@ -29,7 +29,7 @@
             params.append("password", SF_PASSWORD);
 
             try {
-                const response = await fetch(tokenUrl, {
+                const response = fetch(tokenUrl, {
                     method: "POST",
                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
                     body: params,
