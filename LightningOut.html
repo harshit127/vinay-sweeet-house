@@ -35,7 +35,7 @@
                     body: params,
                 });
 
-                const data = await response.json();
+                const data = response.json();
                 if (data.access_token) {
                     console.log("Authentication successful!", data);
                     loadLightningComponent(data.access_token);
