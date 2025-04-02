@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salesforce Lightning Out Example test!</title>
+   <script src="https://cdn.jsdelivr.net/npm/jsforce@3.2.2/dist/jsforce.min.js"></script>
+    <script>
+        // Salesforce OAuth Credentials (Replace with your actual values)
+        const CLIENT_ID = "3MVG9GBhY6wQjl2v2qOvZNO6DHA5O4UCEo8TEmLJrnuvETtSUR97T66RVVMnb0TZVvJbf79xRGHqYn0choZkA";
+        const CLIENT_SECRET = "3BE23422C292909A4CD0884C0841F82C601FFBEE14FF6AAEFF93370E9D595F76";
+        const SF_LOGIN_URL = "https://metacube52.my.salesforce.com";
+        const SF_INSTANCE_URL = "https://metacube52.lightning.force.com/";
+        const SF_USERNAME = "harshit.jaiswal+101@metacube.com"; 
+        const SF_PASSWORD = "Metacube890NrgxfDMyk7kC7JOKaDAEBqsy8"; // Append Security Token if needed
+
+
+        // Function to load Lightning Out component
+        function loadLightningComponent(oauthToken) {
+           const jsforce = require('jsforce');
+        const conn = new jsforce.Connection({
+          oauth2 : {
+            // you can change loginUrl to connect to sandbox or prerelease env.
+            // loginUrl : 'https://test.salesforce.com',
+            clientId : '3MVG9GBhY6wQjl2v2qOvZNO6DHA5O4UCEo8TEmLJrnuvETtSUR97T66RVVMnb0TZVvJbf79xRGHqYn0choZkA',
+            clientSecret : '3BE23422C292909A4CD0884C0841F82C601FFBEE14FF6AAEFF93370E9D595F76',
+            redirectUri : 'https://harshit127.github.io/'
+          }
+        });
+        const userInfo = await conn.login(username, password)
+        
+        // logged in user property
+        console.log("User ID: " + userInfo.id);
+        console.log("Org ID: " + userInfo.organizationId);
+        }
+
+        // Start authentication on page load
+        window.onload = function () {
+            authenticateWithSalesforce();
+        };
+    </script>
+</head>
+<body>
+    <h2>Salesforce Lightning Out Example</h2>
+    <div id="lightning-container"></div>
+</body>
+</html>
