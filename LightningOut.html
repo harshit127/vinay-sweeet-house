@@ -18,7 +18,8 @@
         fetch("https://metacube52.my.salesforce.com/services/oauth2/token?grant_type=client_credentials&client_id=3MVG9GBhY6wQjl2v2qOvZNO6DHA5O4UCEo8TEmLJrnuvETtSUR97T66RVVMnb0TZVvJbf79xRGHqYn0choZkA&client_secret=3BE23422C292909A4CD0884C0841F82C601FFBEE14FF6AAEFF93370E9D595F76", requestOptions)
             .then((response) => response.text())
             .then((result) => {AccessToken = result.access_token;
-                              loadLightningComponent(AccessToken);})
+                              loadLightningComponent(AccessToken);
+                              console.log(result.access_token)})
             .catch((error) => console.error(error));   
             
         }
