@@ -8,21 +8,22 @@
         const SF_INSTANCE_URL = "https://metacube52.lightning.force.com/";
         let AccessToken;
         async function authenticateWithSalesforce() {
-        const myHeaders = new Headers();
-            myHeaders.append("Cookie", "BrowserId=6lVcqQiUEfCUftXF-c9Eww; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1");
-        const requestOptions = {
-            method: "POST",
-            headers: myHeaders,
-            redirect: "follow"
-        };
-        fetch("https://metacube52.my.salesforce.com/services/oauth2/token?grant_type=client_credentials&client_id=3MVG9GBhY6wQjl2v2qOvZNO6DHA5O4UCEo8TEmLJrnuvETtSUR97T66RVVMnb0TZVvJbf79xRGHqYn0choZkA&client_secret=3BE23422C292909A4CD0884C0841F82C601FFBEE14FF6AAEFF93370E9D595F76", requestOptions)
-            .then((response) => response.text())
-            .then((result) => {AccessToken = JSON.parse(result);
-                              console.log(AccessToken.access_token);
-                              loadLightningComponent(AccessToken.access_token);})
-            .catch((error) => console.error(error)); 
+             loadLightningComponent('00DdN00000XBuv7!AQEAQHc56AWpA8fPUB.9feAIT2JlVfgflnxT4vcJexh3doKsli06aQOaOY3cIuiCx61_qbDjrABgCFpv6LGz3LSAw4vdL5cx');
+        // const myHeaders = new Headers();
+        //     myHeaders.append("Cookie", "BrowserId=6lVcqQiUEfCUftXF-c9Eww; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1");
+        // const requestOptions = {
+        //     method: "POST",
+        //     headers: myHeaders,
+        //     redirect: "follow"
+        // };
+        // fetch("https://metacube52.my.salesforce.com/services/oauth2/token?grant_type=client_credentials&client_id=3MVG9GBhY6wQjl2v2qOvZNO6DHA5O4UCEo8TEmLJrnuvETtSUR97T66RVVMnb0TZVvJbf79xRGHqYn0choZkA&client_secret=3BE23422C292909A4CD0884C0841F82C601FFBEE14FF6AAEFF93370E9D595F76", requestOptions)
+        //     .then((response) => response.text())
+        //     .then((result) => {AccessToken = JSON.parse(result);
+        //                       console.log(AccessToken.access_token);
+        //                       loadLightningComponent(AccessToken.access_token);})
+        //     .catch((error) => console.error(error)); 
             
-        }
+        // }
         // function authenticateWithSalesforce() {
         //     const tokenUrl = SF_LOGIN_URL+"/services/oauth2/token";
         //        console.log(tokenUrl);
