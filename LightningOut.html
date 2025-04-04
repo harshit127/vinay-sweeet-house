@@ -24,33 +24,6 @@
             .catch((error) => console.error(error)); 
             
         }
-        function authenticateWithSalesforce() {
-            const tokenUrl = SF_LOGIN_URL+"/services/oauth2/token";
-               console.log(tokenUrl);
-            const params = new URLSearchParams();
-            params.append("grant_type", "password");
-            params.append("client_id", CLIENT_ID);
-            params.append("client_secret", CLIENT_SECRET);
-            params.append("username", SF_USERNAME);
-            params.append("password", SF_PASSWORD);
-            try {
-                const response = fetch(tokenUrl, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: params,
-                });
-
-                const data = response.json();
-                if (data.access_token) {
-                    console.log("Authentication successful!", data);
-                    loadLightningComponent(data.access_token);
-                } else {
-                    console.error("Error authenticating:", data);
-                }
-            } catch (error) {
-                console.error("Authentication failed:", error);
-            }
-         }
 
         // Function to load Lightning Out component
         function loadLightningComponent(oauthToken) {
