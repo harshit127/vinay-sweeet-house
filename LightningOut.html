@@ -8,6 +8,7 @@
         let emailValue;
         function myFunction() {
           emailValue = document.getElementById("myText").value
+             authenticateWithSalesforce();
            }
         const SF_INSTANCE_URL = "https://metacube52.lightning.force.com/";
          let AccessToken;
@@ -55,17 +56,15 @@
         }
 
         // Start authentication on page load
-        window.onload = function () {
-            authenticateWithSalesforce();
-        };
+        // window.onload = function () {
+        //     authenticateWithSalesforce();
+        // };
     </script>
 </head>
 <body>
-    <form action="/action_page.php">
-      Email : <input type="text" id="myText" value="Mickey">
+    <h2>Salesforce Lightning Out</h2>
+      Email : <input type="text" id="myText">
       <button onclick="myFunction()">Submit</button>
-     </form>
-    <h2>Salesforce Lightning test</h2>
     <div id="lightning-container"></div>
 </body>
 </html>
