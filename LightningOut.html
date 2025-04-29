@@ -35,6 +35,23 @@
         function loadLightningComponent(oauthToken) {
             console.log('a1**'+ oauthToken);
             console.log(typeof oauthToken);
+
+         const axios = require('axios');
+         const apiVersion = 'v62.0'; 
+         const response = await axios.post(
+         ${SF_INSTANCE_URL}/services/data/${apiVersion}/sobjects/Account/,
+         {
+            Name: 'John'
+         },
+         {
+         headers: {
+          Authorization: Bearer ${oauthToken},
+          'Content-Type': 'application/json'
+        }
+      }
+    );
+      console.log('Lead created successfully:', response.data);
+            
             const script = document.createElement("script");
             script.src = SF_INSTANCE_URL+'/lightning/lightning.out.js';
             script.onload = function () {
