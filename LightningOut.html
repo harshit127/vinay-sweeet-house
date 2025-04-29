@@ -24,7 +24,7 @@
         fetch("https://metacube52.my.salesforce.com/services/oauth2/token?grant_type=client_credentials&client_id=3MVG9GBhY6wQjl2v2qOvZNO6DHA5O4UCEo8TEmLJrnuvETtSUR97T66RVVMnb0TZVvJbf79xRGHqYn0choZkA&client_secret=3BE23422C292909A4CD0884C0841F82C601FFBEE14FF6AAEFF93370E9D595F76", requestOptions)
             .then((response) => response.text())
             .then((result) => {AccessToken = JSON.parse(result);
-                              console.log(AccessToken.access_token);
+                              console.log('Test123'+AccessToken.access_token);
                                loadLightningComponent(AccessToken.access_token);
                              })
             .catch((error) => console.error(error)); 
@@ -33,25 +33,6 @@
 
         // Function to load Lightning Out component
         function loadLightningComponent(oauthToken) {
-            console.log('a1**'+ oauthToken);
-            console.log(typeof oauthToken);
-
-         const axios = require('axios');
-         const apiVersion = 'v62.0'; 
-         const response = axios.post(
-         ${SF_INSTANCE_URL}/services/data/${apiVersion}/sobjects/Account/,
-         {
-            Name: 'John'
-         },
-         {
-         headers: {
-          Authorization: Bearer ${oauthToken},
-          'Content-Type': 'application/json'
-        }
-      }
-    );
-      console.log('Lead created successfully:', response.data);
-            
             const script = document.createElement("script");
             script.src = SF_INSTANCE_URL+'/lightning/lightning.out.js';
             script.onload = function () {
