@@ -7,7 +7,6 @@
     <script>
         let emailValue;
         function myFunction() {
-            console.log('HelloTest'+ 'https://metacube52.my.salesforce.com/services/data/v63.0/loyalty-programs/${House of Suntory - Loyalty & Membership Program}/members');
           emailValue = document.getElementById("myText").value
              authenticateWithSalesforce();
            }
@@ -21,10 +20,10 @@
             headers: myHeaders,
             redirect: "follow"
         };
-        fetch("https://metacube52.my.salesforce.com/services/oauth2/token?grant_type=client_credentials&client_id=3MVG9ppGyoGYN5w5pLplmWHjU.4iZbTsNiFoB2T8eHypvrUC3__5JnuTUiH1ABCJ9bgUvSZYfHRUEUYs95jg4&client_secret=AF14E24B7BFCFC1DEED8DF5F97DCAF639B5012EE91DAB29121CE0C9B8AA7E80C", requestOptions)
+        fetch("https://metacube52.my.salesforce.com/services/oauth2/token?grant_type=client_credentials&client_id=3MVG9ppGyoGYN5w5pLplmWHjU.4iZbTsNiFoB2T8eHypvrUC3__5JnuTUiH1ABCJ9bgUvSZYfHRUEUYs95jg4client_secret=AF14E24B7BFCFC1DEED8DF5F97DCAF639B5012EE91DAB29121CE0C9B8AA7E80C", requestOptions)
             .then((response) => response.text())
             .then((result) => {AccessToken = JSON.parse(result);
-                              console.log('Test123'+AccessToken.access_token);
+                              console.log('Test***'+AccessToken.access_token);
                                loadLightningComponent(AccessToken.access_token);
                              })
             .catch((error) => console.error(error)); 
