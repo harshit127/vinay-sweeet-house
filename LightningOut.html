@@ -34,7 +34,7 @@
         function loadLightningComponent(oauthToken) {
             //createSalesforceRecord();
             const script = document.createElement("script");
-            script.src = SF_INSTANCE_URL+'/lightning/lightning.out.js';
+            script.src = 'https://beamsuntory--dcdev.sandbox.my.salesforce.com/lightning/lightning.out.js';
             script.onload = function () {
                 $Lightning.use("c:FOL_Application",
                     function () {
@@ -47,7 +47,7 @@
                             }
                         );
                     },
-                    SF_INSTANCE_URL,
+                    'https://beamsuntory--dcdev.sandbox.my.salesforce.com',
                     oauthToken // Pass the authenticated token
                 );
             };
