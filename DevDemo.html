@@ -10,7 +10,7 @@
           emailValue = document.getElementById("myText").value
              authenticateWithSalesforce();
            }
-        const SF_INSTANCE_URL = 'https://metacube52.my.salesforce.com';
+        const SF_INSTANCE_URL = "https://metacube52.lightning.force.com/";
          let AccessToken;
          async function authenticateWithSalesforce() {    
         const myHeaders = new Headers();
@@ -31,23 +31,22 @@
         }
 
         // Function to load Lightning Out component
-        function loadLightningComponent(oauthToken) {
-            //createSalesforceRecord();
+       function loadLightningComponent(oauthToken) {
             const script = document.createElement("script");
-            script.src = 'https://metacube52.my.salesforce.com/lightning/lightning.out.js';
+            script.src = SF_INSTANCE_URL+'/lightning/lightning.out.js';
             script.onload = function () {
-                $Lightning.use("c:LightningOutDependency",
+                $Lightning.use("c:LightningOutDependencyApp",
                     function () {
                         $Lightning.createComponent(
-                            "c:accountHeaderLaphroaig",
-                            {Email: emailValue},
+                            "c:AccountHeaderLaphroaig",
+                            {Email: "anuj.khandelwal+0104@metacube.com"},
                             "lightning-container",
                             function (component) {
                                 console.log("Lightning Component loaded!", component);
                             }
                         );
                     },
-                    'https://metacube52.my.salesforce.com',
+                    SF_INSTANCE_URL,
                     oauthToken // Pass the authenticated token
                 );
             };
