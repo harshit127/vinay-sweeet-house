@@ -10,7 +10,7 @@
           emailValue = document.getElementById("myText").value
              authenticateWithSalesforce();
            }
-        const SF_INSTANCE_URL = 'https://beamsuntory--dcdev.sandbox.my.salesforce.com';
+         const SF_INSTANCE_URL = "https://beamsuntory--dcdev.sandbox.lightning.force.com/";
          let AccessToken;
          async function authenticateWithSalesforce() {    
         const myHeaders = new Headers();
@@ -31,23 +31,23 @@
         }
 
         // Function to load Lightning Out component
+
         function loadLightningComponent(oauthToken) {
-            //createSalesforceRecord();
             const script = document.createElement("script");
-            script.src = 'https://beamsuntory--dcdev.sandbox.my.salesforce.com/lightning/lightning.out.js';
+            script.src = SF_INSTANCE_URL+'/lightning/lightning.out.js';
             script.onload = function () {
                 $Lightning.use("c:FOL_Application",
                     function () {
                         $Lightning.createComponent(
                             "c:FilterAdvanceOrder_LWC",
-                            {Email: emailValue},
+                            {Email: "anuj.khandelwal+0104@metacube.com"},
                             "lightning-container",
                             function (component) {
                                 console.log("Lightning Component loaded!", component);
                             }
                         );
                     },
-                    'https://beamsuntory--dcdev.sandbox.my.salesforce.com',
+                    SF_INSTANCE_URL,
                     oauthToken // Pass the authenticated token
                 );
             };
