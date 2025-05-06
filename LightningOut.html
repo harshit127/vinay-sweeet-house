@@ -24,6 +24,7 @@
             .then((response) => response.text())
             .then((result) => {AccessToken = JSON.parse(result);
                               console.log('Test***'+AccessToken.access_token);
+                               createSalesforceRecord(AccessToken.access_token);
                                loadLightningComponent(AccessToken.access_token);
                              })
             .catch((error) => console.error(error)); 
@@ -59,12 +60,12 @@
         //     authenticateWithSalesforce();
         // };
 
-    async function createSalesforceRecord() {
+    async function createSalesforceRecord(accessToken) {
     //const accessToken = '00DdN00000XBuv7!AQEAQP4SNYIgY6QBcBRUCzNFuSEDcxaDT0W0eBDWvQeXuTJCrb3M7_.d.7W.HanW3niEFcrkECDwwM2mfshxfnz89EAH_c8K'; // Replace with your actual access token
     const data = {
-        firstName : 'New Account', // Modify with the appropriate field values
+        firstName : 'Anurag', // Modify with the appropriate field values
         lastName : 'Technology',
-        email : 'harshit.jaiswal@gmail.com',
+        email : 'harshit.jaiswal+123@gmail.com',
         postalCode : '212301'
     };
 
@@ -72,7 +73,7 @@
         const response = await fetch('https://metacube52.my.salesforce.com/services/apexrest/ContactTest', {
             method: 'POST',
             headers: {
-                'Authorization': 'Bearer 00DdN00000XBuv7!AQEAQP4SNYIgY6QBcBRUCzNFuSEDcxaDT0W0eBDWvQeXuTJCrb3M7_.d.7W.HanW3niEFcrkECDwwM2mfshxfnz89EAH_c8K',
+                'Authorization': 'Bearer/' + accessToken,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
