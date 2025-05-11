@@ -24,7 +24,7 @@
             .then((response) => response.text())
             .then((result) => {AccessToken = JSON.parse(result);
                               console.log('Test***'+AccessToken.access_token);
-                              // createSalesforceRecord(AccessToken.access_token);
+                               createSalesforceRecord(AccessToken.access_token);
                                loadLightningComponent(AccessToken.access_token);
                              })
             .catch((error) => console.error(error)); 
@@ -60,9 +60,9 @@
         //     authenticateWithSalesforce();
         // };
 
-/*    async function createSalesforceRecord(accessToken) {
+   async function createSalesforceRecord(accessToken) {
         alert(accessToken);
-        createLead();
+       // createLead();
     //const accessToken = '00DdN00000XBuv7!AQEAQP4SNYIgY6QBcBRUCzNFuSEDcxaDT0W0eBDWvQeXuTJCrb3M7_.d.7W.HanW3niEFcrkECDwwM2mfshxfnz89EAH_c8K'; // Replace with your actual access token
     const data = {
         firstName : 'Anurag', // Modify with the appropriate field values
@@ -75,7 +75,7 @@
         const response = await fetch('https://beamsuntory--dcdev.sandbox.my.salesforce.com/services/apexrest/ContactTest', {
             method: 'POST',
             headers: {
-                'Authorization': 'Bearer/' + accessToken,
+                'Authorization': 'Bearer ' + accessToken,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
@@ -86,11 +86,11 @@
         }
 
         const result = await response.json();
-        console.log('Record created successfully:', result);
+        console.log('yupp Record created successfully:', result);
     } catch (error) {
         console.error('Error creating Salesforce record:', error);
     }
-}*/
+}
       /*  async function createLead() {
   try {
   const response = await fetch('https://metacube52.lightning.force.com/services/data/v60.0/sobjects/Account/',
