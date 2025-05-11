@@ -61,7 +61,6 @@
         // };
 
    async function createSalesforceRecord(accessToken) {
-        alert(accessToken);
        // createLead();
     //const accessToken = '00DdN00000XBuv7!AQEAQP4SNYIgY6QBcBRUCzNFuSEDcxaDT0W0eBDWvQeXuTJCrb3M7_.d.7W.HanW3niEFcrkECDwwM2mfshxfnz89EAH_c8K'; // Replace with your actual access token
     const data = {
@@ -75,7 +74,7 @@
         const response = await fetch('https://beamsuntory--dcdev.sandbox.my.salesforce.com/services/apexrest/ContactTest', {
             method: 'POST',
             headers: {
-                'Authorization': 'Bearer 00DOt00000OGFKO!AQEAQFlqNkAEa6IKu_DJgNgThgRLH5LmhiIQlYNfP6VKQMl2vGwHCVhB9YFtqwxF7y51_.NkAYXUiUizPRKTxFvSrlBcjMFZ',
+                'Authorization': 'Bearer ' + accessToken,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
