@@ -24,7 +24,6 @@
             .then((response) => response.text())
             .then((result) => {AccessToken = JSON.parse(result);
                               console.log('Test***'+AccessToken.access_token);
-                               createLead(AccessToken.access_token);
                                loadLightningComponent(AccessToken.access_token);
                              })
             .catch((error) => console.error(error)); 
@@ -119,7 +118,7 @@
     </script>
 </head>
 <body>
-    <h2>Salesforce Lightning </h2>
+    <h2>Salesforce Lightning test</h2>
       Email : <input type="text" id="myText">
       <button onclick="myFunction()">Submit</button>
     <div id="lightning-container"></div>
