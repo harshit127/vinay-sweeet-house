@@ -10,7 +10,7 @@
           emailValue = document.getElementById("myText").value
              authenticateWithSalesforce();
            }
-         const SF_INSTANCE_URL = "https://beamsuntory--dcdev.sandbox.lightning.force.com/";
+         const SF_INSTANCE_URL = "https://beamsuntory--loyaltydev.sandbox.lightning.force.com/";
          let AccessToken;
          async function authenticateWithSalesforce() {    
         const myHeaders = new Headers();
@@ -20,7 +20,7 @@
             headers: myHeaders,
             redirect: "follow"
         };
-        fetch("https://beamsuntory--dcdev.sandbox.my.salesforce.com/services/oauth2/token?grant_type=client_credentials&client_id=3MVG9ppGyoGYN5w5pLplmWHjU.4iZbTsNiFoB2T8eHypvrUC3__5JnuTUiH1ABCJ9bgUvSZYfHRUEUYs95jg4&client_secret=AF14E24B7BFCFC1DEED8DF5F97DCAF639B5012EE91DAB29121CE0C9B8AA7E80C", requestOptions)
+        fetch("https://beamsuntory--loyaltydev.sandbox.my.salesforce.com/services/oauth2/token?grant_type=client_credentials&client_id=3MVG9Fob0S.D_AiQhTxtZ6z7UvDd0GWfkVof9ayt9ZStxcM8nToSZKwaWsU5ZHGzKs1eGEdg4BFbqQSg3vIDz&client_secret=DAA215CD4421B0E7106DE50C2ECA0E473A4B34E13BD4452C9D6BF54EDA44E7B0", requestOptions)
             .then((response) => response.text())
             .then((result) => {AccessToken = JSON.parse(result);
                               console.log('Test***'+AccessToken.access_token);
@@ -96,7 +96,7 @@
         console.error('Error creating Salesforce record:', error);
     }
 }*/
-async function createLead(accessToken) {
+/*async function createLead(accessToken) {
   try {
   const response = await fetch('https://beamsuntory--dcdev.sandbox.my.salesforce.com/services/data/v60.0/sobjects/Account/',
       {
@@ -115,7 +115,7 @@ async function createLead(accessToken) {
   } catch (error) {
     console.error('Error creating lead:', error.response ? error.response.data : error.message);
   }
-}
+}*/
     </script>
 </head>
 <body>
