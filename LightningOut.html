@@ -40,7 +40,7 @@
                     function () {
                         $Lightning.createComponent(
                             "c:martechActivityList",
-                            {Email: emailValue},
+                            {Id: emailValue},
                             "lightning-container",
                             function (component) {
                                 console.log("Lightning Component loaded!", component);
@@ -119,7 +119,7 @@
 </head>
 <body>
     <h2>Salesforce Lightning </h2>
-      Email : <input type="text" id="myText">
+      Id : <input type="text" id="myText">
       <button onclick="myFunction()">Submit</button>
     <div id="lightning-container"></div>
 </body>
