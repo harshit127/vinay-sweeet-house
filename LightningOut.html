@@ -33,14 +33,14 @@
         // Function to load Lightning Out component
 
         function loadLightningComponent(oauthToken) {
-            console.log('klkl'+oauthToken);
+            console.log('tedl'+oauthToken);
             const script = document.createElement("script");
             script.src = SF_INSTANCE_URL+'/lightning/lightning.out.js';
             script.onload = function () {
                 $Lightning.use("c:FOL_Application",
                     function () {
                         $Lightning.createComponent(
-                            "c:lwcLoyaltyActivityHistoryList",
+                            "c:FOL_AccountHeader",
                             {},
                             "lightning-container",
                             function (component) {
