@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salesforce Lightning Out Example </title>
+<script>
+const SF_INSTANCE_URL = "https://beamsuntory--dcdev.sandbox.lightning.force.com/";
+         let AccessToken;
+         async function authenticateWithSalesforce() {    
+        const myHeaders = new Headers();
+            myHeaders.append("Cookie", "BrowserId=6lVcqQiUEfCUftXF-c9Eww; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1");
+        const requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            redirect: "follow"
+        };
+        fetch("https://beamsuntory--dcdev.sandbox.my.salesforce.com/services/oauth2/token?grant_type=client_credentials&client_id=3MVG9ppGyoGYN5w5pLplmWHjU.8v4cQFhnFANUxW.7KUspfqQutmTSYk8AEwMxX18T8e_pIfsATkPEYicrlNA&client_secret=7DF7D4AB3314F59E63B4E6C57053A96BF27F093174A3BE2C0AD525465EAD1417", requestOptions)
+            .then((response) => response.text())
+            .then((result) => {AccessToken = JSON.parse(result);
+                               loadLightningComponent(AccessToken.access_token);
+                             })
+            .catch((error) => console.error(error)); 
+            
+        }
+        // Function to load Lightning Out component
+        function loadLightningComponent(oauthToken) {
+            const script = document.createElement("script");
+            script.src = SF_INSTANCE_URL+'/lightning/lightning.out.js';
+            script.onload = function () {
+                $Lightning.use("c:FOL_Application",
+                    function () {
+                        $Lightning.createComponent(
+                            "c:FOL_AccountHeader",
+                            {Email: 'harshit.kasliwal@gmail.com'},
+                            "lightning-container",
+                            function (component) {
+                                console.log("Lightning Component loaded!", component);
+                            }
+                        );
+                    },
+                    SF_INSTANCE_URL,
+                    oauthToken // Pass the authenticated token
+                );
+            };
+            document.head.appendChild(script);
+        }
+        //Start authentication on page load
+         window.onload = function () {
+             authenticateWithSalesforce();
+         };
+</script>
+</head>
+<body>
+    <h2>Salesforce Lightning </h2>
+      Id : <input type="text" id="myText">
+      <button onclick="myFunction()">Submit</button>
+    <div id="lightning-container"></div>
+</body>
+</html>
