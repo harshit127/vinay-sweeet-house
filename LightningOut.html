@@ -9,7 +9,7 @@
         function myFunction() {
           emailValue = document.getElementById("myText").value
              authenticateWithSalesforce();
-           }
+        }
          const SF_INSTANCE_URL = "https://beamsuntory--loyaltydev.sandbox.lightning.force.com/";
          let AccessToken;
          async function authenticateWithSalesforce() {    
@@ -23,7 +23,7 @@
         fetch("https://beamsuntory--loyaltydev.sandbox.my.salesforce.com/services/oauth2/token?grant_type=client_credentials&client_id=3MVG9Fob0S.D_AiQhTxtZ6z7UvDd0GWfkVof9ayt9ZStxcM8nToSZKwaWsU5ZHGzKs1eGEdg4BFbqQSg3vIDz&client_secret=DAA215CD4421B0E7106DE50C2ECA0E473A4B34E13BD4452C9D6BF54EDA44E7B0", requestOptions)
             .then((response) => response.text())
             .then((result) => {AccessToken = JSON.parse(result);
-                              console.log('Test***'+AccessToken.access_token);
+                              console.log('yupp'+AccessToken.access_token);
                                loadLightningComponent(AccessToken.access_token);
                              })
             .catch((error) => console.error(error)); 
@@ -33,6 +33,7 @@
         // Function to load Lightning Out component
 
         function loadLightningComponent(oauthToken) {
+            console.log('hellooo'+oauthToken);
             const script = document.createElement("script");
             script.src = SF_INSTANCE_URL+'/lightning/lightning.out.js';
             script.onload = function () {
