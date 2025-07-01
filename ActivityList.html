@@ -28,6 +28,7 @@ const SF_INSTANCE_URL = "https://beamsuntory--dcdev.sandbox.lightning.force.com/
         }
         // Function to load Lightning Out component
         function loadLightningComponent(oauthToken) {
+            console.log(oauthToken);
             const script = document.createElement("script");
             script.src = SF_INSTANCE_URL+'/lightning/lightning.out.js';
             script.onload = function () {
@@ -55,7 +56,7 @@ const SF_INSTANCE_URL = "https://beamsuntory--dcdev.sandbox.lightning.force.com/
 </script>
 </head>
 <body>
-    <h2>Salesforce Lightning yupp</h2>
+    <h2>Salesforce Lightning </h2>
       Id : <input type="text" id="myText">
       <button onclick="myFunction()">Submit</button>
     <div id="lightning-container"></div>
