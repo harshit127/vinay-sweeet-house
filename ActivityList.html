@@ -7,6 +7,9 @@
 <script>
 const SF_INSTANCE_URL = "https://beamsuntory--dcdev.sandbox.lightning.force.com/";
          let AccessToken;
+       function myFunction() {
+             authenticateWithSalesforce();
+        }
          async function authenticateWithSalesforce() {    
         const myHeaders = new Headers();
             myHeaders.append("Cookie", "BrowserId=6lVcqQiUEfCUftXF-c9Eww; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1");
@@ -52,7 +55,7 @@ const SF_INSTANCE_URL = "https://beamsuntory--dcdev.sandbox.lightning.force.com/
 </script>
 </head>
 <body>
-    <h2>Salesforce Lightning </h2>
+    <h2>Salesforce Lightning yupp</h2>
       Id : <input type="text" id="myText">
       <button onclick="myFunction()">Submit</button>
     <div id="lightning-container"></div>
