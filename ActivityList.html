@@ -31,6 +31,7 @@ const SF_INSTANCE_URL = "https://beamsuntory--dcdev.sandbox.lightning.force.com/
             const script = document.createElement("script");
             script.src = SF_INSTANCE_URL+'/lightning/lightning.out.js';
             script.onload = function () {
+                console.log("test1234");
                 $Lightning.use("c:FOL_Application",
                     function () {
                         $Lightning.createComponent(
